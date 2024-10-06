@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Syne Mono', monospace;
+}
+
+:root {
+    --red: #FF0000;
+    --violet: #ee14d1;
+    --white: #FFFFFF;
+    --gray-light: #f4f4f4;
+    --gray-dark: #333;
+}
+
+body {
+    background-color: var(--gray-light);
+    color: var(--gray-dark);
+    line-height: 1.6;
+}
+
+nav {
+    background-color: var(--violet);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+nav p {
+    color: var(--white);
+    font-size: 26px;
+    padding-left: 15px;
+    font-weight: bold;
+}
+
+nav img {
+    width: 50px;
+    height: auto;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+h2 {
+    margin: 10px 0;
+    color: var(--violet);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+ol {
+    margin: 0 35px;
+    padding-left: 20px;
+    font-size: 18px;
+    list-style: none;
+    color: var(--gray-dark);
+}
+
+ol li {
+    margin: 5px 0;
+    padding: 5px;
+    background-color: var(--white);
+    border-left: 4px solid var(--red);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+ol li:hover {
+    transform: translateX(10px);
+    background-color: var(--gray-light);
+}
+
+input {
+    width: 250px;
+    padding: 8px 12px;
+    font-family: sans-serif;
+    margin: 15px 0;
+    border: 2px solid var(--red);
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: var(--violet);
+}
+
+button {
+    text-align: center;
+    margin: 10px;
+    padding: 8px 16px;
+    font-family: sans-serif;
+    color: var(--white);
+    background-color: var(--red);
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid var(--red);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--violet);
+    transform: scale(1.05);
+}
+
+.lastbtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+footer {
+    height: 40px;
+    background-color: var(--red);
+    color: var(--white);
+    text-align: center;
+    line-height: 40px;
+    font-family: cursive;
+    position: relative;
+    margin-top: 20px;
+}
+
+footer marquee {
+    padding: 0 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 450px) {
+    #maincheez {
+        width: 300px;
+        height: 220px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    ol {
+        font-size: 14px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    #maincheez {
+        width: 80vw;
+        height: 35vh;
+    }
+}
+
+
+/* Delete button */
+/* Additional styles for the delete button */
+button {
+    margin: 0 5px; /* Adjust button spacing */
+}
+
+/* Style for the Delete button */
+button:hover {
+    background-color: #d9534f; /* Darker red for delete button on hover */
+}
+
+button:active {
+    background-color: #c9302c; /* Even darker red for delete button when pressed */
+}
+
+/* Optional: Specific styles for the delete button */
+.delete-btn {
+    background-color: #d9534f; /* Red color for delete button */
+    color: var(--white); /* White text color */
+}
+
+.delete-btn:hover {
+    background-color: #c9302c; /* Darker red on hover */
+}
+
+.delete-btn:active {
+    background-color: #a94442; /* Darker red when pressed */
+}
+
+/* Additional styles for the video list items */
+ol li {
+    display: flex;
+    justify-content: space-between; /* Aligns buttons to the right */
+    align-items: center; /* Centers buttons vertically */
+    padding: 10px; /* Add padding for better spacing */
+    border-bottom: 1px solid var(--gray-dark); /* Bottom border for list items */
+}
+
+ol li button {
+    margin-left: 10px; /* Space between buttons */
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+}
