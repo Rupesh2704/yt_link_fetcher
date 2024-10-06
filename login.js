@@ -8,7 +8,7 @@ function login() {
         localStorage.setItem('userEmail', email);
         
         // Redirect to index.html
-        window.location.href = 'index.html';
+        window.location.href = 'land.html';
     } else {
         alert('Please enter both email and password.');
     }
@@ -24,7 +24,7 @@ function signup() {
         localStorage.setItem('userEmail', email);
         
         // Redirect to index.html
-        window.location.href = 'index.html';
+        window.location.href = 'land.html';
     } else {
         alert('Please enter both email and password.');
     }

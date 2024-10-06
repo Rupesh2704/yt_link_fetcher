@@ -19,29 +19,26 @@ function showmylinks() {
 
 // Function to get the live link and add it to the list
 function getLiveLink() {
-    const inputLink = document.getElementById('link').value;
-    const videoId = extractVideoId(inputLink);
-    
+    const link = document.getElementById('link').value;
+    const videoId = extractVideoId(link);
     if (videoId) {
-        videoLinks.push({ name: inputLink, id: videoId });
-        document.getElementById('link').value = ''; // Clear input field
-        showmylinks();
+        const iframe = document.getElementById('maincheez');
+        iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
     } else {
-        alert('Please enter a valid YouTube link.');
+        alert('Invalid YouTube URL!');
     }
 }
 
-// Function to extract video ID from a YouTube URL
 function extractVideoId(url) {
-    const regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
-    const match = url.match(regex);
-    return match ? match[1] : null;
+    const regex = /(?:https?:\/\/)?(?:www\.)?youtube\.com\/(?:watch\?v=|embed\/|live\/|shorts\/|v\/|.*v=)?([a-zA-Z0-9_-]{11})/;
+    const matches = url.match(regex);
+    return matches ? matches[1] : null;
 }
 
 // Function to play the video in the iframe
 function playVideo(videoId) {
     const iframe = document.getElementById('maincheez');
-    iframe.src = `https://www.youtube.com/embed/${videoId}`;
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`; // Autoplay added
 }
 
 // Function to delete a link from the list
@@ -58,11 +55,11 @@ function remlink() {
     document.getElementById('remove').value = ''; // Clear input field
 }
 
-// Function to add a link manually (not fully implemented in this example)
+// Function to add a link manually
 function addlink() {
     const inputLink = prompt("Enter the YouTube video link:");
     const videoId = extractVideoId(inputLink);
-    
+
     if (videoId) {
         videoLinks.push({ name: inputLink, id: videoId });
         showmylinks();
@@ -77,10 +74,8 @@ function remlinks() {
     showmylinks();
 }
 
-
-    document.getElementById('myForm').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent the form from submitting
-        alert('Form submitted successfully!'); // Replace with your logic
-        // Additional functionality here
-    });
-
+// Optional: Prevent default form submission if needed
+document.getElementById('myForm')?.addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the form from submitting
+    alert('Form submitted successfully!'); // Replace with your logic
+});

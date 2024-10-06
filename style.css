@@ -27,6 +27,7 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin-bottom: 50px;
 }
 
 nav p {
@@ -131,6 +132,9 @@ footer {
 
 footer marquee {
     padding: 0 10px;
+}
+#maincheez{
+    border-radius:  5%;
 }
 
 /* Responsive Design */
