@@ -5,68 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Watch YouTube</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="./script.js" defer></script>
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
 </head>
 
-<body onload="showmylinks(); displayEmail();">
-    <nav>
-        <img src="youtube.png" alt="YouTube">
-        <p>YouTube</p>
-    </nav>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <input type="password" id="password" placeholder="Enter your password" required>
+        <button onclick="login()">Login</button>
+        <br>
+        <button onclick="signup()">Sign Up</button>
 
-    <center>
-        <iframe id="maincheez" width="420" height="345" src="https://www.youtube.com/embed/pQ4ykYx0ths?t=31s"
-            allowfullscreen></iframe>
-    </center>
-
-    <div class="first">
-        <h2>Enter YouTube Video Link</h2>
-        <input type="text" id="link" placeholder="Enter YouTube video link">
-        <button id="get" onClick="getLiveLink()">Submit</button>
     </div>
 
-    <h2>Some Music Video Links</h2>
-    <ol id="lists">
-        <li>Yalgaar: zzwRbKI2pn4 
-            <button onClick="playVideo('zzwRbKI2pn4')">Play</button>
-            <button onClick="deleteLink('zzwRbKI2pn4')">Delete</button>
-        </li>
-        <li>Java In One Video: aQatrXw0njs 
-            <button onClick="playVideo('aQatrXw0njs')">Play</button>
-            <button onClick="deleteLink('aQatrXw0njs')">Delete</button>
-        </li>
-    </ol>
-
-    <div class="lastbtns">
-        <button onclick="addlink()">Add a Link</button>
-        <button onclick="remlinks()">Erase all links</button>
-    </div>
-
-    <hr>
-    
-
-    <!-- Display the logged-in user's email -->
-    <div id="userEmailDisplay" style="text-align:center; margin-top:20px; font-size:20px;">
-        <strong>User Email: </strong><span id="userEmail"></span>
-    </div>
-
-    <footer>
-        <marquee behavior="scroll" direction="left">Thanks for using this website || Website by: Rupesh</marquee>
-    </footer>
-
-    <script>
-        // Function to display the email from localStorage
-        function displayEmail() {
-            const email = localStorage.getItem("userEmail");
-            if (email) {
-                document.getElementById("userEmail").innerText = email; // Display the email
-            } else {
-                document.getElementById("userEmail").innerText = "Not logged in"; // If no email found
-            }
-        }
-    </script>
+    <script src="login.js"></script>
 </body>
 
 </html>
